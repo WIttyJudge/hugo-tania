@@ -3,15 +3,19 @@
         <div class="flex">
             <div>
                 <a class="brand" href="{{ relURL "/" }}">
-                    {{ with .Site.Params.titleEmoji }}
+                    {{ with .Site.Params.brand.emoji }}
                     <span class="emoji">
                         {{ . }}
                     </span>
                     {{ end }}
-                    {{ with .Site.Params.titleLogo }}
+
+                    {{ with .Site.Params.brand.logo }}
                         <img src="{{ . | relURL }}" />
                     {{ end }}
-                    {{ .Site.Title }}
+
+                    {{ with .Site.Params.brand.text }}
+                      {{.}}
+                    {{ end }}
                     </a>
             </div>
             <div class="flex">
